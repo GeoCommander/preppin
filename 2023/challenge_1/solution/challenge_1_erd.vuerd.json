@@ -43,13 +43,36 @@
   "table": {
     "tables": [
       {
-        "name": "",
+        "name": "Transaction",
         "comment": "",
         "columns": [
           {
             "name": "Transaction Code",
             "comment": "",
-            "dataType": "VARCHAR",
+            "dataType": "VARCHAR(15)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 104.12744140625,
+              "widthComment": 60,
+              "widthDataType": 87.71875,
+              "widthDefault": 60
+            },
+            "id": "d53146bf-3f52-485f-9962-99ae17c002d5"
+          },
+          {
+            "name": "Value",
+            "comment": "",
+            "dataType": "INT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -62,20 +85,89 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 107.50810241699219,
+              "widthName": 60,
               "widthComment": 60,
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "d53146bf-3f52-485f-9962-99ae17c002d5"
+            "id": "c2fe953e-8fca-4b53-8bef-cb4499d0a198"
+          },
+          {
+            "name": "Customer Code",
+            "comment": "",
+            "dataType": "VARCHAR(6)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 93.0380859375,
+              "widthComment": 60,
+              "widthDataType": 80.48876953125,
+              "widthDefault": 60
+            },
+            "id": "f05fbd5d-ca55-4140-a5c8-ee46d9664c45"
+          },
+          {
+            "name": "Online or In-Person",
+            "comment": "",
+            "dataType": "CHAR(1)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 114.7216796875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "f1526836-45f5-4316-b014-fae557db0bd4"
+          },
+          {
+            "name": "Transaction Date",
+            "comment": "",
+            "dataType": "DATETIME",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 100.50927734375,
+              "widthComment": 60,
+              "widthDataType": 66.7587890625,
+              "widthDefault": 60
+            },
+            "id": "c84bbc90-c1a9-4817-8bdf-2310af0c4b41"
           }
         ],
         "ui": {
           "active": true,
           "left": 200,
-          "top": 100,
-          "zIndex": 4,
-          "widthName": 60,
+          "top": 101.2,
+          "zIndex": 17,
+          "widthName": 69.4375,
           "widthComment": 60
         },
         "visible": true,
