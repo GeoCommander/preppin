@@ -1,0 +1,50 @@
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import split, udf, col, substring_index
+from pyspark.sql.types import StringType, IntegerType, DateType, DoubleType
+from pyspark.sql.functions import to_date, date_format
+
+# Create a Spark session
+spark = SparkSession.builder \
+    .config("fs.azure.account.key.formula1dlnow.blob.core.windows.net", "DbKDq+d0+GbZM62SlkGsu0cvvkXaIPC9zbHcL04XUPw4NFh6H3JHXWHmEXCURaXPQhe21cooTuKu+AStxRKEfw==") \
+    .getOrCreate()
+
+# Load the data
+data = spark.read.csv("abfss://demo@formula1dlnow.dfs.core.windows.net/pd.csv", header=True)
+
+# Convert 'Value' to DoubleType
+data = data.withColumn('Value', data['Value'].cast(DoubleType()))
+
+# Split the 'Transaction Code' column
+split_col = split(data['Transaction Code'], '-')
+data = data.withColumn('Bank', split_col.getItem(0))
+data = data.withColumn('Transaction Coding', split_col.getItem(1))
+
+# Reorder the columns
+data = data.select(['Transaction Coding','Bank','Value','Customer Code','Online or In-Person','Transaction Date'])
+
+# Map the 'Online or In-Person' column
+mapping = {'1': 'Online', '2': 'In-Person'}
+map_func = udf(lambda x: mapping.get(x), StringType())
+data = data.withColumn('Online or In-Person', map_func(data['Online or In-Person']))
+
+
+# Convert 'Transaction Date' to DateType
+data = data.withColumn('Transaction Date', to_date('Transaction Date', 'dd/MM/yyyy HH:mm:ss'))
+
+# Change 'Transaction Date' to day of week
+data = data.withColumn('Transaction Date', date_format('Transaction Date', 'EEEE'))
+
+
+
+# Group by 'Bank'
+by_bank = data.groupby('Bank').sum('Value')
+
+# Group by 'Bank', 'Transaction Date', 'Online or In-Person'
+by_3_properties = data.groupby('Bank', 'Transaction Date', 'Online or In-Person').sum('Value')
+
+# Group by 'Bank', 'Customer Code'
+by_2_properties = data.groupby('Bank', 'Customer Code').sum('Value')
+
+# Get length of 'Bank' column
+bank_column_length = data.select('Bank').count()
+print(bank_column_length)

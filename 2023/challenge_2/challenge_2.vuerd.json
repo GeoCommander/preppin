@@ -1,0 +1,274 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -29,
+    "scrollLeft": -17,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "Bank Identifier",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Bank",
+            "comment": "",
+            "dataType": "VARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 82.58708190917969,
+              "widthDefault": 60
+            },
+            "id": "4d6d4553-a603-4e27-995a-448cb770ad75"
+          },
+          {
+            "name": "SWIFT code",
+            "comment": "",
+            "dataType": "CHAR(4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.42106628417969,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1067e3fc-5018-428c-ab65-9e9462e19d7f"
+          },
+          {
+            "name": "Check Digits",
+            "comment": "",
+            "dataType": "CHAR(2)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 77.25706481933594,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "a291127e-cf19-48e8-9047-326c612d72aa"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 138,
+          "top": 184,
+          "zIndex": 18,
+          "widthName": 92.44107055664062,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "393cd786-4a90-45a6-a43d-4994c6eef93a"
+      },
+      {
+        "name": "Bank Transaction",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Transaction ID",
+            "comment": "",
+            "dataType": "CHAR(4)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 89.99708557128906,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0e0cd91e-2013-449f-832a-3312e27f693c"
+          },
+          {
+            "name": "Account Number",
+            "comment": "",
+            "dataType": "CHAR(8)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 105.55810546875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "150c4032-656b-43d6-9ffd-19e889f418dd"
+          },
+          {
+            "name": "Sort Code",
+            "comment": "",
+            "dataType": "CHAR(8_",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 61.85205078125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5c813d59-08d3-480e-8023-2c7aef0e6a0f"
+          },
+          {
+            "name": "Bank",
+            "comment": "",
+            "dataType": "VARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 82.58708190917969,
+              "widthDefault": 60
+            },
+            "id": "fb36a722-84ae-42d5-aca0-c7c4bb75f099"
+          }
+        ],
+        "ui": {
+          "active": true,
+          "left": 377,
+          "top": 408,
+          "zIndex": 24,
+          "widthName": 106.81910705566406,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "8bba3206-046f-4d3c-8502-77693af74395"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "393cd786-4a90-45a6-a43d-4994c6eef93a",
+          "columnIds": [
+            "4d6d4553-a603-4e27-995a-448cb770ad75"
+          ],
+          "x": 524.8441467285156,
+          "y": 249.25,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "8bba3206-046f-4d3c-8502-77693af74395",
+          "columnIds": [
+            "fb36a722-84ae-42d5-aca0-c7c4bb75f099"
+          ],
+          "x": 584.5725936889648,
+          "y": 408,
+          "direction": "top"
+        },
+        "constraintName": "fk_bank identifier_to_bank transaction",
+        "visible": true,
+        "id": "7e370064-0978-44a5-a380-19ed5e9823db"
+      }
+    ]
+  }
+}
