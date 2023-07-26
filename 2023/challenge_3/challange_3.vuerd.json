@@ -164,9 +164,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 200,
-          "top": 100,
-          "zIndex": 10,
+          "left": 71.6668,
+          "top": 109.1667,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60
         },
@@ -295,9 +295,9 @@
         ],
         "ui": {
           "active": true,
-          "left": 182,
-          "top": 353,
-          "zIndex": 24,
+          "left": 74.5,
+          "top": 348.0002,
+          "zIndex": 4,
           "widthName": 78.94708251953125,
           "widthComment": 60
         },
